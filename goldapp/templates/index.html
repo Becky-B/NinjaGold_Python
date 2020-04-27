@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Ninja Gold</title>
+</head>
+<body>
+    <h2>Your Gold : {{ request.session.total }}</h2>
+<div class = chance>
+    <div class= Farm>
+        <form method="POST" action="Farm">
+            {% csrf_token %}
+            <h3>Farm</h3>
+            <p>(earns 1-10 gold)</p>
+            <div class=button><input type = "submit" value = 'Find Gold!'></div>
+        </form>
+    </div>
+    <div class= Cave>
+        <form method="POST" action="Cave">
+            {% csrf_token %}
+            <h3>Cave</h3>
+            <p>(earns 10-20 gold)</p>
+            <div class=button><input type = "submit" value = 'Find Gold!'></div>
+        </form>
+    </div>
+    <div class= House>
+        <form method="POST" action="House">
+            {% csrf_token %}
+            <h3>House</h3>
+            <p>(earns 1-5 gold)</p>
+            <div class=button><input type = "submit" value = 'Find Gold!'></div>
+        </form>
+    </div>
+    <div class= Casino>
+        <form method="POST" action="Casino">
+            <input type= 'hidden' name = 'location' value = 'casino'>
+            {% csrf_token %}
+            <h3>Casino</h3>
+            <p>(earns 1-50 gold)</p>
+            <div class=button><input type = "submit" value = 'Find Gold!'></div>
+        </form>
+    </div>
+</div>
+<a href = '/reset'><button>Play Again!</button></a>
+<div class= PLaybyPLay>
+    {% for message in request.session.text %}
+    <p>{{ message }}</p>
+    {% endfor %}
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+h2{
+    text-align: center;
+    color: goldenrod;
+}
+.chance{
+    display: flex;
+
+}
+.Farm{
+    border-style: solid;
+    border-color: rgb(138, 27, 27);
+}
+.Cave{
+    border-style: solid;
+    border-color: rgb(88, 168, 92);
+}
+.House{
+    border-style: solid;
+    border-color: rgb(252, 252, 142);
+}
+.Casino{
+    border-style: solid;
+    border-color: green;
+}
+
+.PLaybyPLay{
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    margin-top: 5%;
+
+}
